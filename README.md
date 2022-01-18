@@ -5,7 +5,7 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* ruby-2.7.0
 
 * System dependencies
 
@@ -21,4 +21,9 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+# Список сущностей реального мира
+
+* Тест
+* Пользователь:Тестируемые
+* Пользователь: Администратор
+* Публикатор результатов теста в соц сети
