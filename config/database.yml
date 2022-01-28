@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: test_guru_development
+  database: my_development
   host: localhost
   username: George
   password: GOW4400
