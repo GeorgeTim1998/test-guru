@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2022_01_28_171949) do
   enable_extension "plpgsql"
 
   create_table "questions", force: :cascade do |t|
-    t.string "body"
+    t.string "body", null: false
     t.integer "test_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
