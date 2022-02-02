@@ -21,16 +21,21 @@ tests = Test.create!([{ title: 'Ruby', level: 2, category_id: categories[0].id, 
                       { title: 'HTML', level: 3, category_id: categories[0].id, author_id: users[0].id },
                       { title: 'Rails', level: 1, category_id: categories[0].id, author_id: users[0].id }])
 
-question = Question.create!(body: 'What is a class?', test_id: tests[0].id)
-Question.create!(body: 'what is an object?', test_id: tests[0].id)
-Question.create!(body: 'What is an instance method?', test_id: tests[0].id)
+questions = Question.create!([{ body: 'Ru1?', test_id: tests[0].id },
+                              { body: 'Ru2?', test_id: tests[0].id },
+                              { body: 'Ru3?', test_id: tests[0].id },
+                              { body: 'Ht1?', test_id: tests[1].id },
+                              { body: 'Ht2?', test_id: tests[1].id },
+                              { body: 'Ra1?', test_id: tests[2].id },
+                              { body: 'Ra2?', test_id: tests[2].id }])
 
-Answer.create!(body: 'A class is written by a programmer in a defined structure to create an object.',
-               correct: true, question_id: question.id)
-Answer.create!(body: 'Object is a variable, a data structure, a function, or a method.', correct: true,
-               question_id: question.id)
-Answer.create!(body: 'Methods which require an object of its class to be created before it can be called.',
-               correct: true, question_id: question.id)
+answers = Answer.create!([{ body: 'A.Ru1', correct: true, question_id: questions[0].id },
+                          { body: 'A.Ru2', correct: true, question_id: questions[0].id },
+                          { body: 'A.Ru3', correct: true, question_id: questions[0].id },
+                          { body: 'A.Ht1', correct: true, question_id: questions[1].id },
+                          { body: 'A.Ht2', correct: true, question_id: questions[1].id },
+                          { body: 'A.Ru1', correct: true, question_id: questions[2].id },
+                          { body: 'A.Ru2', correct: true, question_id: questions[2].id }])
 
 Result.create!(user_id: users[0].id, test_id: tests[0].id)
 Result.create!(user_id: users[0].id, test_id: tests[1].id)
