@@ -30,12 +30,12 @@ questions = Question.create!([{ body: 'Ru1?', test_id: tests[0].id },
                               { body: 'Ra2?', test_id: tests[2].id }])
 
 Answer.create!([{ body: 'A.Ru1', correct: true, question_id: questions[0].id },
-                          { body: 'A.Ru2', correct: true, question_id: questions[0].id },
-                          { body: 'A.Ru3', correct: true, question_id: questions[0].id },
-                          { body: 'A.Ht1', correct: true, question_id: questions[1].id },
-                          { body: 'A.Ht2', correct: true, question_id: questions[1].id },
-                          { body: 'A.Ru1', correct: true, question_id: questions[2].id },
-                          { body: 'A.Ru2', correct: true, question_id: questions[2].id }])
+                { body: 'A.Ru2', correct: true, question_id: questions[0].id },
+                { body: 'A.Ru3', correct: true, question_id: questions[0].id },
+                { body: 'A.Ht1', correct: true, question_id: questions[1].id },
+                { body: 'A.Ht2', correct: true, question_id: questions[1].id },
+                { body: 'A.Ru1', correct: true, question_id: questions[2].id },
+                { body: 'A.Ru2', correct: true, question_id: questions[2].id }])
 
 Result.create!(user_id: users[0].id, test_id: tests[0].id)
 Result.create!(user_id: users[0].id, test_id: tests[1].id)
