@@ -29,7 +29,7 @@ questions = Question.create!([{ body: 'Ru1?', test_id: tests[0].id },
                               { body: 'Ra1?', test_id: tests[2].id },
                               { body: 'Ra2?', test_id: tests[2].id }])
 
-answers = Answer.create!([{ body: 'A.Ru1', correct: true, question_id: questions[0].id },
+Answer.create!([{ body: 'A.Ru1', correct: true, question_id: questions[0].id },
                           { body: 'A.Ru2', correct: true, question_id: questions[0].id },
                           { body: 'A.Ru3', correct: true, question_id: questions[0].id },
                           { body: 'A.Ht1', correct: true, question_id: questions[1].id },
