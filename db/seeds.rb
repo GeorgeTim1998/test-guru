@@ -17,26 +17,26 @@ categories = Category.create!([{ category: 'Programming skills' }, { category: '
                                { category: 'Math skills' }])
 users = User.create!([{ name: 'George' }, { name: 'Masha' }, { name: 'Vika' }])
 
-tests = Test.create!([{ title: 'Ruby', level: 2, category_id: categories[0].id, author_id: users[0].id },
-                      { title: 'HTML', level: 3, category_id: categories[0].id, author_id: users[0].id },
-                      { title: 'Rails', level: 1, category_id: categories[0].id, author_id: users[0].id }])
+tests = Test.create!([{ title: 'Ruby', level: 2, category: categories[0], author: users[0] },
+                      { title: 'HTML', level: 3, category: categories[0], author: users[0] },
+                      { title: 'Rails', level: 1, category: categories[0], author: users[0] }])
 
-questions = Question.create!([{ body: 'Ru1?', test_id: tests[0].id },
-                              { body: 'Ru2?', test_id: tests[0].id },
-                              { body: 'Ru3?', test_id: tests[0].id },
-                              { body: 'Ht1?', test_id: tests[1].id },
-                              { body: 'Ht2?', test_id: tests[1].id },
-                              { body: 'Ra1?', test_id: tests[2].id },
-                              { body: 'Ra2?', test_id: tests[2].id }])
+questions = Question.create!([{ body: 'Ru1?', test: tests[0] },
+                              { body: 'Ru2?', test: tests[0] },
+                              { body: 'Ru3?', test: tests[0] },
+                              { body: 'Ht1?', test: tests[1] },
+                              { body: 'Ht2?', test: tests[1] },
+                              { body: 'Ra1?', test: tests[2] },
+                              { body: 'Ra2?', test: tests[2] }])
 
-Answer.create!([{ body: 'A.Ru1', correct: true, question_id: questions[0].id },
-                { body: 'A.Ru2', correct: true, question_id: questions[0].id },
-                { body: 'A.Ru3', correct: true, question_id: questions[0].id },
-                { body: 'A.Ht1', correct: true, question_id: questions[1].id },
-                { body: 'A.Ht2', correct: true, question_id: questions[1].id },
-                { body: 'A.Ru1', correct: true, question_id: questions[2].id },
-                { body: 'A.Ru2', correct: true, question_id: questions[2].id }])
+Answer.create!([{ body: 'A.Ru1', correct: true, question: questions[0] },
+                { body: 'A.Ru2', correct: true, question: questions[0] },
+                { body: 'A.Ru3', correct: true, question: questions[0] },
+                { body: 'A.Ht1', correct: true, question: questions[1] },
+                { body: 'A.Ht2', correct: true, question: questions[1] },
+                { body: 'A.Ru1', correct: true, question: questions[2] },
+                { body: 'A.Ru2', correct: true, question: questions[2] }])
 
-Result.create!(user_id: users[0].id, test_id: tests[0].id)
-Result.create!(user_id: users[0].id, test_id: tests[1].id)
-Result.create!(user_id: users[0].id, test_id: tests[2].id)
+Result.create!(user: users[0], test: tests[0])
+Result.create!(user: users[0], test: tests[1])
+Result.create!(user: users[0], test: tests[2])
