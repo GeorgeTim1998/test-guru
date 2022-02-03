@@ -4,7 +4,6 @@ class User < ApplicationRecord
   has_many :tests, class_name: 'Test', inverse_of: 'author', foreign_key: 'author_id'
 
   def tests_of_difficulty(level)
-    Test.joins(:results)
-        .where(level: level, results: { user_id: id })
+    tests.where(level: level)
   end
 end
