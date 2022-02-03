@@ -1,6 +1,6 @@
 class Test < ApplicationRecord
   belongs_to :category
-  belongs_to :author, class_name: 'User', inverse_of: 'tests'
+  belongs_to :author, class_name: 'User', inverse_of: 'created_tests'
 
   has_many :questions, dependent: :destroy
   has_many :results, dependent: :destroy
