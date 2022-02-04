@@ -6,6 +6,6 @@ class User < ApplicationRecord
   validates :email, presence: true
 
   def tests_by_difficulty(level)
-    Test.results_by_level(self, level)
+    tests.results_by_level(self, level)
   end
 end
