@@ -13,12 +13,9 @@ Test.destroy_all
 User.destroy_all
 Category.destroy_all
 
-categories = Category.create!([{ name: 'Programming skills' }, { name: 'Speaking skills' },
-                               { name: 'Math skills' }])
-
-users = User.create!([{ name: 'George', email: 'gt1998@gmail.com' },
-                      { name: 'Masha', email: 'mm1998@gmail.com' },
-                      { name: 'Vika', email: 'vp@gmail.com' }])
+categories = Category.create!([{ category: 'Programming skills' }, { category: 'Speaking skills' },
+                               { category: 'Math skills' }])
+users = User.create!([{ name: 'George' }, { name: 'Masha' }, { name: 'Vika' }])
 
 tests = Test.create!([{ title: 'Ruby', level: 2, category: categories[0], author: users[0] },
                       { title: 'HTML', level: 3, category: categories[0], author: users[0] },
