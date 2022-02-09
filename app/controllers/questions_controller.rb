@@ -5,10 +5,12 @@ class QuestionsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
+    # @test = Test.find(params[:test_id]) # this works!
     render inline: '<% @test.questions.each do |question| %><p><%= question.body %></p><% end %>'
   end
 
   def show
+    # @question = Question.find(params[:id]) # this works!
     render inline: '<%= @question.body %>'
   end
 
@@ -16,11 +18,16 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
+    redirect_to test_questions(params[:test_id])
   end
 
   def create
-    question = @test.questions.create(question_params)
-    render plain: question.inspect
+    @question = @test.questions.build(question_params)
+    if @question.save
+      redirect_to test_questions(params[:test_id])
+    else
+      render :new
+    end
   end
 
   private
