@@ -22,6 +22,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
+    # @test = Test.find(params[:test_id]) # this works!
     @question = @test.questions.build(question_params)
     if @question.save
       redirect_to test_questions(params[:test_id])
