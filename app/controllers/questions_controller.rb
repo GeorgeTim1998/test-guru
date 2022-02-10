@@ -16,13 +16,13 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-    redirect_to test_questions(params[:test_id])
+    redirect_to test_questions_url
   end
 
   def create
     @question = @test.questions.build(question_params)
     if @question.save
-      redirect_to test_questions(params[:test_id])
+      redirect_to test_questions_url
     else
       render :new
     end
