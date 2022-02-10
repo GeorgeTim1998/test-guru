@@ -16,13 +16,13 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-    redirect_to test_questions_url
+    redirect_to test_questions_path
   end
 
   def create
     @question = @test.questions.build(question_params)
     if @question.save
-      redirect_to test_questions_url
+      redirect_to test_questions_path
     else
       render :new
     end
@@ -43,6 +43,6 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:body, :test_id)
+    params.require(:question).permit(:body)
   end
 end
