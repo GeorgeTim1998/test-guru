@@ -6,7 +6,9 @@ class QuestionsController < ApplicationController
 
   def show; end
 
-  def new; end
+  def new
+    @question = @test.questions.build
+  end
 
   def destroy
     @question.destroy
@@ -28,7 +30,7 @@ class QuestionsController < ApplicationController
 
   def update
     if @question.update(question_params)
-      redirect_to @question
+      redirect_to test_path(@question.test_id)
     else
       render :edit
     end
