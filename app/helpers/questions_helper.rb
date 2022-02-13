@@ -1,10 +1,6 @@
 module QuestionsHelper
   def question_header(question, test)
-    action = if question.new_record?
-               'Create new'
-             else
-               'Edit'
-             end
+    action = question.new_record? ? 'Create new' : 'Edit'
     "#{action} #{test.title} question"
   end
 end
