@@ -15,6 +15,10 @@ class Result < ApplicationRecord
     current_question.nil?
   end
 
+  def successful?
+    percentage_of_passing >= 85
+  end
+
   private
 
   def before_validation_set_first_question
