@@ -16,7 +16,11 @@ class Result < ApplicationRecord
   end
 
   def successful?
-    percentage_of_passing >= 85
+    successful_rate >= 85
+  end
+
+  def successful_rate
+    100 * correct_questions / test.questions.count
   end
 
   private
