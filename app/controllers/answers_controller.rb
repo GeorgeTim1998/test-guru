@@ -38,6 +38,10 @@ class AnswersController < ApplicationController
     @question = Question.find(params[:question_id])
   end
 
+  def set_answer
+    @answer = Answer.find(params[:id])
+  end
+
   def answer_params
     params.require(:answer).permit(:body, :correct)
   end

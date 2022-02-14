@@ -1,14 +1,21 @@
 <h1><%= @question.body %></h1>
 
+<h2>Answers</h2>
+
+<ol>
+  <%= render @question.answers %>
+</ol>
+
 <table>
   <tr>
-    <td><%= link_to "Edit", edit_question_path(@question.id) %></td>
+    <td><%= link_to "Edit", edit_question_path(@question) %></td>
     <td>
       <%= link_to "Del",
                   @question,
                   method: :delete,
                   data: { confirm: "You sure?" } %>
     </td>
-    <td><%= link_to "Back", test_path(@question.test_id) %></td>
+    <td><%= link_to "Add answer", new_question_answer_path(@question) %></td>
+    <td><%= link_to "Back", test_path(@question) %></td>
   </tr>
 </table>
