@@ -1,5 +1,5 @@
 class ResultsController < ApplicationController
-  before_action :set_result, only: %i[show update summary]
+  before_action :find_result, only: %i[show update summary]
   def show; end
 
   def summary; end
@@ -16,7 +16,7 @@ class ResultsController < ApplicationController
 
   private
 
-  def set_result
+  def find_result
     @result = Result.find(params[:id])
   end
 end
