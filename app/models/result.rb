@@ -22,7 +22,7 @@ class Result < ApplicationRecord
   end
 
   def successful_rate
-    100 * correct_questions / test.questions.count
+    100 * correct_questions.to_f / test.questions.count
   end
 
   private
