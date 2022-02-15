@@ -8,4 +8,8 @@ class User < ApplicationRecord
   def tests_by_difficulty(level)
     tests.results_by_level(self, level)
   end
+
+  def result(test)
+    results.order(id: :desc).find_by(test_id: test.id)
+  end
 end

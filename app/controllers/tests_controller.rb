@@ -1,5 +1,5 @@
 class TestsController < ApplicationController
-  before_action :find_test, only: %i[show]
+  before_action :find_test, only: %i[show start]
 
   def index
     @tests = Test.all
@@ -7,6 +7,12 @@ class TestsController < ApplicationController
 
   def show
     @questions = @test.questions
+  end
+
+  def start
+    @user = User.first
+    @user.tests.push(@test)
+    redirect_to @user.result(@test)
   end
 
   private
