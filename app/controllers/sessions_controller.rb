@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[new create]
+
   def new; end
 
   def create
@@ -7,6 +9,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to tests_path
     else
+      flash.now[:alert] = 'Are u a Guru? Verify ur Email and Password please!'
       render :new
     end
   end
