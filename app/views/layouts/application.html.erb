@@ -10,12 +10,10 @@
   </head>
 
   <body>
-    
-    <% if logged_in? %>
-      <p class="nav user">Welcome, <b><%= current_user.email %></b> Guru</p>
-    <% end %>
-    
+    <%= render 'shared/upper' %>  
+
     <%= yield %>
+    
     <%= render 'shared/footer' %>
   </body>
 </html>
