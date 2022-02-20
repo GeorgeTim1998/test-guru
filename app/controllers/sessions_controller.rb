@@ -22,6 +22,6 @@ class SessionsController < ApplicationController
   private
 
   def redirect_back_to_requested_url
-    redirect_to cookies[:requested_url]
+    redirect_to cookies.delete(:requested_url) || root_path
   end
 end
