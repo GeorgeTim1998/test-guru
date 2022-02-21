@@ -12,12 +12,12 @@ module ApplicationHelper
   end
 
   def user_actions
-    if logged_in?
+    if user_signed_in?
       tag.p("Welcome, #{current_user.email} Guru") +
-        link_to(' Logout', logout_path, method: :delete, data: { confirm: 'U sure?' })
+        link_to(' Logout', destroy_user_session_path, method: :delete, data: { confirm: 'U sure?' })
     else
-      link_to('Login', login_path) + tag.p(' ') +
-        link_to('Signup', signup_path)
+      link_to('Login', new_user_session_path) + tag.p(' ') +
+        link_to('Signup', new_user_registration_path)
     end
   end
 end

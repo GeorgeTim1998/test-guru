@@ -12,6 +12,17 @@
   <body>
     <%= render 'shared/upper' %>  
 
+    <%= render 'shared/flash' %>
+
+    
+    <% if user_signed_in? %>
+      <p class="nav user">
+        Welcome, <b><%= current_user.email %></b>
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+      </p>
+    <% end %>
+    
+
     <%= yield %>
     
     <%= render 'shared/footer' %>
