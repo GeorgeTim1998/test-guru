@@ -76,7 +76,6 @@ ActiveRecord::Schema.define(version: 20_220_220_191_644) do
     t.datetime 'confirmation_sent_at'
     t.string 'unconfirmed_email'
     t.string 'type', default: 'User', null: false
-    t.string 'first_name'
     t.string 'last_name'
     t.index ['confirmation_token'], name: 'index_users_on_confirmation_token', unique: true
     t.index ['email'], name: 'index_users_on_email', unique: true
