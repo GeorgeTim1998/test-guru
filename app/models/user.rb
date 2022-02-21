@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :created_tests, class_name: 'Test', inverse_of: 'author', foreign_key: 'author_id'
 
   validates :email, presence: true, uniqueness: true
+  validates :type, presence: true, inclusion: { in: %w[User Admin] }
   validates_format_of :email, with: /\A[^@\s]+@([^@.\s]+\.)*[^@.\s]+\z/i
 
   def tests_by_difficulty(level)
