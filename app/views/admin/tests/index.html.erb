@@ -1,0 +1,12 @@
+<h1>Tests</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Level</th>
+    <th>N of questions</th>
+  </tr>
+
+  <%= render @tests %>
+  <td colspan = '4'><%= link_to "Create new test", new_admin_test_path %></td>
+</table>
