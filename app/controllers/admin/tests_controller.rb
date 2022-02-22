@@ -9,11 +9,6 @@ class Admin::TestsController < Admin::BaseController
     @questions = @test.questions
   end
 
-  def start
-    current_user.tests.push(@test)
-    redirect_to current_user.result(@test)
-  end
-
   private
 
   def find_test
