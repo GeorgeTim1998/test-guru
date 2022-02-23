@@ -1,2 +1,6 @@
 ru:
   hello: "Привет мир"
+
+  description: 'Вопрос по тесту "%{title}" от TestGuru'
+  file: 'test-guru-question.txt'
+  

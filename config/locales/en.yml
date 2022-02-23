@@ -31,3 +31,6 @@
 
 en:
   hello: "Hello world"
+
+  description: 'A question about %{title} from TestGuru'
+  file: 'test-guru-question.txt'
