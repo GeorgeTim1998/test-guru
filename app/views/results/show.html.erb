@@ -12,5 +12,6 @@
     </p>
   <% end %>
 
+  <p><%= link_to 'Create gist for question.', result_gists_path(@result), method: :post %></p>
   <p><%= form.submit 'Next question' %></p>
 <% end %>
