@@ -3,4 +3,8 @@ ru:
 
   description: 'Вопрос по тесту "%{title}" от TestGuru'
   file: 'test-guru-question.txt'
-  
+
+  gists:
+    create:
+      success: <a href=%{url} rel="nofollow noopener" target="_blank">Gist</a> создан.
+      failure: 'Не удалось сохранть gist.'
