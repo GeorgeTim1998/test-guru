@@ -13,12 +13,14 @@ Rails.application.routes.draw do
   end
 
   resources :results, only: %i[show update] do
+    resources :gists, only: :create
     member do
       get :summary
     end
   end
 
   namespace :admin do
+    resources :gist, only: :index
     resources :tests do
       resources :questions, shallow: true, except: :index do
         resources :answers, shallow: true, except: :index
