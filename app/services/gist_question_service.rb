@@ -3,10 +3,10 @@ class GistQuestionService
 
   Response = Struct.new(:success?, :url)
 
-  def initialize(question, client: nil)
+  def initialize(question, client = default_client)
     @question = question
     @test = @question.test
-    @client = client || Octokit::Client.new(access_token: github_access_token)
+    @client = client
   end
 
   def call
@@ -15,6 +15,10 @@ class GistQuestionService
   end
 
   private
+
+  def default_client
+    Octokit::Client.new(access_token: github_access_token)
+  end
 
   def success?
     @client.last_response.status == SUCCESSFUL_RESPONSE
@@ -32,9 +36,7 @@ class GistQuestionService
   end
 
   def gist_content
-    content = [@question.body]
-    content += @question.answers.pluck(:body)
-    content.join("\n")
+    [@question.body, *@question.answers.pluck(:body)].join("\n")
   end
 
   def github_access_token
