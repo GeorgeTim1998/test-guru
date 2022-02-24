@@ -6,5 +6,5 @@ ru:
 
   gists:
     create:
-      success: <a href=%{url} rel="nofollow noopener" target="_blank">Gist</a> создан.
+      success: <a href=%{url} rel="nofollow noopener" target="_blank">Gist создан.</a>
       failure: 'Не удалось сохранть gist.'

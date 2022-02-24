@@ -37,5 +37,5 @@ en:
 
   gists:
     create:
-      success: <a href=%{url} rel="nofollow noopener" target="_blank" >Gist</a> created.
+      success: <a href=%{url} rel="nofollow noopener" target="_blank" >Gist created.</a> 
       failure: 'Failed to save gist.'
