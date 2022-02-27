@@ -8,7 +8,6 @@ function sortRowsByTitle() {
   var table = document.querySelector('table')
 
   var rows = table.querySelectorAll('tr')
-  console.log(rows)
   var sortedRows = []
 
   for (var i = 1; i < rows.length; i++) {
