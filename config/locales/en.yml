@@ -56,6 +56,6 @@ en:
 
   errors:
     messages:
-      blank: 'Cant be blank'
-      taken: 'and level is taken'
+      blank: ' cant be blank'
+      taken: ' and level is taken'
       record_invalid: 'Invalid name'
