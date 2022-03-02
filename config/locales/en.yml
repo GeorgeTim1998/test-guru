@@ -39,3 +39,12 @@ en:
     create:
       success: <a href=%{url} rel="nofollow noopener" target="_blank" >Gist created.</a> 
       failure: 'Failed to save gist.'
+
+  admin:
+    tests:
+      create:
+        success: 'Test succesfully created'
+      index:
+        header: 'Available tests'
+      form_inline:
+        submit: 'Ok'
