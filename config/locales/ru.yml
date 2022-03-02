@@ -17,3 +17,14 @@ ru:
     create:
       success: <a href=%{url} rel="nofollow noopener" target="_blank">Gist создан.</a>
       failure: 'Не удалось сохранть gist.'
+  
+  activerecord:
+    attributes:
+      test:
+        title: 'Название'
+
+  errors:
+    messages:
+      taken: ' и уровнень уже занято'
+      blank: 'Название теста не может быть пустым'
+      record_invalid: 'Неверное название'

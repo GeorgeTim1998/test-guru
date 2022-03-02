@@ -48,3 +48,14 @@ en:
         header: 'Available tests'
       form_inline:
         submit: 'Ok'
+  
+  activerecord:
+  attributes:
+    test:
+      title: 'Title'
+
+  errors:
+    messages:
+      blank: 'Cant be blank'
+      taken: 'and level is taken'
+      record_invalid: 'Invalid name'
