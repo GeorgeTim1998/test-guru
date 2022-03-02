@@ -1,11 +1,10 @@
 document.addEventListener('turbolinks:load', function() {
   let controls = document.querySelectorAll('.form-inline-link')
-  console.log("after load")
+  
   if (controls.length) {
     for (let i = 0; i < controls.length; i++) {
       controls[i].addEventListener('click', formInlineLinkHandler)
     }
-    console.log("Click done")
   }
   
   var errors = document.querySelector('.resource-errors')
@@ -17,7 +16,6 @@ document.addEventListener('turbolinks:load', function() {
 })
   
 function formInlineLinkHandler(event) {
-  console.log("In func")
   event.preventDefault()
   
   var testId = this.dataset.testId
