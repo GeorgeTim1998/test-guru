@@ -23,7 +23,7 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def update_inline
-    if @test.update(test_params)
+    if @test.update!(test_params)
       redirect_to admin_tests_path
     else
       render :index
