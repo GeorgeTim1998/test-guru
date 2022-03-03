@@ -24,6 +24,10 @@ class Result < ApplicationRecord
     (100 * correct_questions.to_f / test.questions.count).round(1)
   end
 
+  def progress_rate
+    (100 * (current_question_number - 1).to_f / test.questions.count).round(0)
+  end
+
   private
 
   def before_validation_set_current_question
