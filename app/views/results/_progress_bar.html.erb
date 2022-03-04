@@ -1,0 +1,6 @@
+<%= stylesheet_pack_tag 'result', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<div id="progress-bar">
+  <%= tag.div id: 'green-bar',
+              data: { percent: @result.progress_rate} %> 
+</div>

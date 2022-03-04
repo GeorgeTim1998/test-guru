@@ -4,7 +4,27 @@ ru:
   description: 'Вопрос по тесту "%{title}" от TestGuru'
   file: 'test-guru-question.txt'
 
+  admin:
+    tests:
+      create:
+        success: 'Тест успешно создан'
+      index:
+        header: 'Доступные тесты'
+      form_inline:
+        submit: 'Oк'
+
   gists:
     create:
       success: <a href=%{url} rel="nofollow noopener" target="_blank">Gist создан.</a>
       failure: 'Не удалось сохранть gist.'
+  
+  activerecord:
+    attributes:
+      test:
+        title: 'Название'
+
+  errors:
+    messages:
+      taken: ' и уровнень уже занято'
+      blank: ' теста не может быть пустым'
+      record_invalid: 'Неверное название'

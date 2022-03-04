@@ -39,3 +39,23 @@ en:
     create:
       success: <a href=%{url} rel="nofollow noopener" target="_blank" >Gist created.</a> 
       failure: 'Failed to save gist.'
+
+  admin:
+    tests:
+      create:
+        success: 'Test succesfully created'
+      index:
+        header: 'Available tests'
+      form_inline:
+        submit: 'Ok'
+  
+  activerecord:
+  attributes:
+    test:
+      title: 'Title'
+
+  errors:
+    messages:
+      blank: ' cant be blank'
+      taken: ' and level is taken'
+      record_invalid: 'Invalid name'

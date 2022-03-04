@@ -4,6 +4,8 @@
 <p>Current question: <%= @result.current_question_number %></p>
 <p>Total: <%= @result.test.questions.count %></p>
 
+<%= render 'progress_bar' %>
+
 <%= form_with url: result_path(@result), local: true, method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @result.current_question.answers, :id, :body, include_hidden: false do |b| %>
     <p>
