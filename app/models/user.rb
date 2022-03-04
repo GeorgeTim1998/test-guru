@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :tests, through: :results
   has_many :created_tests, class_name: 'Test', inverse_of: 'author', foreign_key: 'author_id'
   has_many :gists, dependent: :destroy
+  has_many :issued_badges, dependent: :destroy
+  has_many :badges, through: :issued_badges
 
   validates :email, presence: true, uniqueness: true
   validates :type, presence: true, inclusion: { in: %w[User Admin] }
