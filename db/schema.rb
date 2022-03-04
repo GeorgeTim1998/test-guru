@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 20_220_304_134_916) do
     t.string 'rule', null: false
     t.string 'achievement'
     t.string 'image_url', null: false
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
   create_table 'categories', force: :cascade do |t|
