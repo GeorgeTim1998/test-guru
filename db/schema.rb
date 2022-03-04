@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_220_304_140_927) do
+ActiveRecord::Schema.define(version: 20_220_304_141_549) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -47,6 +47,15 @@ ActiveRecord::Schema.define(version: 20_220_304_140_927) do
     t.datetime 'updated_at', precision: 6, null: false
     t.index ['question_id'], name: 'index_gists_on_question_id'
     t.index ['user_id'], name: 'index_gists_on_user_id'
+  end
+
+  create_table 'issued_badges', force: :cascade do |t|
+    t.bigint 'user_id', null: false
+    t.bigint 'badge_id', null: false
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['badge_id'], name: 'index_issued_badges_on_badge_id'
+    t.index ['user_id'], name: 'index_issued_badges_on_user_id'
   end
 
   create_table 'questions', force: :cascade do |t|
@@ -106,6 +115,8 @@ ActiveRecord::Schema.define(version: 20_220_304_140_927) do
   add_foreign_key 'answers', 'questions'
   add_foreign_key 'gists', 'questions'
   add_foreign_key 'gists', 'users'
+  add_foreign_key 'issued_badges', 'badges'
+  add_foreign_key 'issued_badges', 'users'
   add_foreign_key 'questions', 'tests'
   add_foreign_key 'results', 'questions', column: 'current_question_id'
   add_foreign_key 'results', 'tests'
