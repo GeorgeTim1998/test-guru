@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Badge.destroy_all
 Result.destroy_all
 Answer.destroy_all
 Question.destroy_all
@@ -43,3 +44,19 @@ Answer.create!([{ body: 'A.Ru1', correct: true, question: questions[0] },
 Result.create!(user: users[0], test: tests[0])
 Result.create!(user: users[0], test: tests[1])
 Result.create!(user: users[0], test: tests[2])
+
+Badge.create!([{ title: "Become Guru of #{categories[0].name}",
+                 description: "Pass all tests in #{categories[0].name} category",
+                 rule: 'all_tests_from_category',
+                 achievement: categories[0].id.to_s,
+                 image_url: 'app/assets/images/badges/image1' },
+               { title: "#{tests[0].title} first try Guru",
+                 description: "Pass #{tests[0].title} test first try!",
+                 rule: 'test_on_first_attempt',
+                 achievement: tests[0].id.to_s,
+                 image_url: 'app/assets/images/badges/image2' },
+               { title: "Guru of #{tests[0].level} level",
+                 description: "Pass tests of #{tests[0].level} level",
+                 rule: 'all_tests_of_level',
+                 achievement: tests[0].level.to_s,
+                 image_url: 'app/assets/images/badges/image3' }])

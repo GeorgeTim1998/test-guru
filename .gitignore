@@ -16,6 +16,9 @@
 # Ignore uploaded files in development.
 /storage/*
 !/storage/.keep
+/app/assets/images/image1.png
+/app/assets/images/image2.png
+/app/assets/images/image3.png
 
 /public/assets
 .byebug_history
