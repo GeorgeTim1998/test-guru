@@ -1,0 +1,11 @@
+<h1>Badges</h1>
+
+<%= link_to 'Issued Badges', issued_badges_path %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+
+  <%= render @badges %>
+</table>
