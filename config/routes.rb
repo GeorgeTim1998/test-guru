@@ -12,6 +12,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :badges, only: :index do
+    collection do
+      get :issued
+    end
+  end
+
   resources :results, only: %i[show update] do
     resources :gists, only: :create
     member do
