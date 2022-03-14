@@ -1,0 +1,12 @@
+<h1>Badges</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Rule</th>
+  </tr>
+  <%= render @badges %>
+</table>
+<p><%= link_to 'To tests', admin_tests_path %></p>
+<p><%= link_to 'Create new badge', new_admin_badge_path %></p>

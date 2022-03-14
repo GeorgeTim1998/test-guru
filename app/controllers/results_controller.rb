@@ -9,6 +9,7 @@ class ResultsController < ApplicationController
     @result.accept!(params[:answer_ids])
 
     if @result.completed?
+      IssueBadgeService.call(@result)
       TestsMailer.completed_test(@result).deliver_now
       redirect_to summary_result_path(@result)
     else
