@@ -15,6 +15,10 @@ function changeRemainingTime(timeField, startTime, limitTime) {
   const currentTime = parseInt(new Date().getTime()/1000)
   const remainingTime = limitTime - (currentTime - startTime)
   
+  if (remainingTime <= 0) {
+    document.forms[0].submit();
+  }
+  
   timeField.textContent = timeFormat(remainingTime)
 }
 
