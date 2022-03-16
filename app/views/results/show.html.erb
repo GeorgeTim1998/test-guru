@@ -4,6 +4,8 @@
 <p>Current question: <%= @result.current_question_number %></p>
 <p>Total: <%= @result.test.questions.count %></p>
 
+<%= tag.p id: 'time-limit', data: { start: @result.created_at.to_i, limit: @result.test.time_limit } %>
+
 <%= render 'progress_bar' %>
 
 <%= form_with url: result_path(@result), local: true, method: :put do |form| %>

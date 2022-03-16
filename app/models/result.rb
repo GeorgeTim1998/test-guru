@@ -13,7 +13,7 @@ class Result < ApplicationRecord
   end
 
   def completed?
-    current_question.nil?
+    current_question.nil? || timer_ended?
   end
 
   def successful?
@@ -29,6 +29,11 @@ class Result < ApplicationRecord
   end
 
   private
+
+  def timer_ended?
+    time_elapsed = ((Time.now - created_at) / 60).to_i
+    (time_elapsed - test.time_limit).positive?
+  end
 
   def before_validation_set_current_question
     self.current_question = next_question
